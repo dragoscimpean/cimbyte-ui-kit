@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en" data-cb-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cimbyte UI — Component Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../cimbyte.css" />
+  <style>
+    body.cb { padding: 0; }
+    .doc-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+    .doc-hd { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem; }
+    .doc-section { margin-top: 2.5rem; }
+    .doc-section > h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cb-ink-50); border-bottom: 1px solid var(--cb-line); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    .doc-demo { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+  </style>
+</head>
+<body class="cb">
+  <div class="cb-navbar">
+    <div class="cb-navbar-brand">
+      <span class="cb-brand-mark"><span></span><span></span><span></span></span>
+      Cimbyte UI
+    </div>
+    <span class="cb-badge cb-badge-accent">v0.1</span>
+    <div class="cb-navbar-spacer"></div>
+    <div class="cb-search" style="max-width:260px;">
+      <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="6"/><path d="m14 14 3 3"/></svg>
+      <input class="cb-input cb-input-sm" placeholder="Search components…" />
+    </div>
+    <button class="cb-btn cb-btn-sm" onclick="toggleTheme()">Toggle theme</button>
+  </div>
+
+  <div class="doc-wrap">
+    <div class="doc-hd">
+      <h1 class="cb-heading">Component Catalog</h1>
+    </div>
+    <p class="cb-muted">Standalone CSS + JS. Ported from the Auditore design. Link <code class="cb-mono">cimbyte.css</code>, use <code class="cb-mono">cb-*</code> classes.</p>
+
+    <!-- Buttons -->
+    <div class="doc-section">
+      <h2>Buttons</h2>
+      <div class="doc-demo">
+        <button class="cb-btn">Default</button>
+        <button class="cb-btn cb-btn-primary">Primary</button>
+        <button class="cb-btn cb-btn-accent">Accent</button>
+        <button class="cb-btn cb-btn-ghost">Ghost</button>
+        <button class="cb-btn cb-btn-danger">Danger</button>
+        <button class="cb-btn cb-btn-danger-outline">Danger outline</button>
+        <button class="cb-btn" disabled>Disabled</button>
+      </div>
+      <div class="doc-demo" style="margin-top:0.75rem;">
+        <button class="cb-btn cb-btn-xs">Extra small</button>
+        <button class="cb-btn cb-btn-sm">Small</button>
+        <button class="cb-btn">Medium</button>
+        <button class="cb-btn cb-btn-lg">Large</button>
+        <div class="cb-btn-group">
+          <button class="cb-btn cb-btn-sm">Day</button>
+          <button class="cb-btn cb-btn-sm">Week</button>
+          <button class="cb-btn cb-btn-sm">Month</button>
+        </div>
+        <button class="cb-icon-btn" aria-label="More">⋯</button>
+        <button class="cb-icon-btn-circle">BC</button>
+      </div>
+    </div>
+
+    <!-- Forms -->
+    <div class="doc-section">
+      <h2>Forms</h2>
+      <div class="cb-grid" style="grid-template-columns:1fr 1fr; max-width:640px;">
+        <div class="cb-field">
+          <label class="cb-label">Company name</label>
+          <input class="cb-input" placeholder="e.g. Dedeman SRL" />
+          <div class="cb-field-hint">Search by name or CUI.</div>
+        </div>
+        <div class="cb-field">
+          <label class="cb-label">CAEN code</label>
+          <select class="cb-select"><option>4711 — Retail</option><option>6201 — Software</option></select>
+        </div>
+        <div class="cb-field">
+          <label class="cb-label">CUI</label>
+          <input class="cb-input" value="12345" />
+          <div class="cb-field-error">CUI not found.</div>
+        </div>
+        <div class="cb-field">
+          <label class="cb-label">Notes</label>
+          <textarea class="cb-textarea" placeholder="Add a note…"></textarea>
+        </div>
+      </div>
+      <div class="doc-demo" style="margin-top:0.5rem;">
+        <label class="cb-check"><input type="checkbox" checked /> Watchlist</label>
+        <label class="cb-check"><input type="radio" name="r" checked /> Buy-side</label>
+        <label class="cb-check"><input type="radio" name="r" /> Sell-side</label>
+        <label class="cb-switch"><input type="checkbox" checked /><span class="cb-switch-track"></span></label>
+        <div class="cb-input-group" style="max-width:280px;">
+          <input class="cb-input" placeholder="Filter…" />
+          <button class="cb-btn cb-btn-primary">Go</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badges, pills, tags -->
+    <div class="doc-section">
+      <h2>Badges &amp; Pills</h2>
+      <div class="doc-demo">
+        <span class="cb-badge">Default</span>
+        <span class="cb-badge cb-badge-accent">Signal</span>
+        <span class="cb-badge cb-badge-success">Active</span>
+        <span class="cb-badge cb-badge-error">Insolvent</span>
+        <span class="cb-badge cb-badge-warning">SLA risk</span>
+        <span class="cb-badge cb-badge-info">Queued</span>
+        <span class="cb-badge"><span class="cb-dot" style="background:var(--cb-success)"></span> Online</span>
+      </div>
+      <div class="doc-demo" style="margin-top:0.75rem;">
+        <button class="cb-pill is-selected" data-cb-toggle="pill">All <span class="cb-pill-count">4.0M</span></button>
+        <button class="cb-pill" data-cb-toggle="pill">Bucharest <span class="cb-pill-count">820k</span></button>
+        <button class="cb-pill" data-cb-toggle="pill">Cluj <span class="cb-pill-count">210k</span></button>
+        <button class="cb-pill" data-cb-toggle="pill">Revenue &gt; 1M</button>
+      </div>
+    </div>
+
+    <!-- Cards & stats -->
+    <div class="doc-section">
+      <h2>Cards, Stats &amp; Key/Value</h2>
+      <div class="cb-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="cb-stat"><div class="cb-stat-label">Companies</div><div class="cb-stat-value">4.02M</div><div class="cb-stat-delta is-up">▲ 12k this week</div></div>
+        <div class="cb-stat"><div class="cb-stat-label">Open deals</div><div class="cb-stat-value">37</div><div class="cb-stat-delta is-down">▼ 3 vs last week</div></div>
+        <div class="cb-stat"><div class="cb-stat-label">SLA breaches</div><div class="cb-stat-value">5</div><div class="cb-stat-delta">stable</div></div>
+      </div>
+      <div class="cb-grid" style="grid-template-columns:1fr 1fr; margin-top:1rem;">
+        <div class="cb-card cb-card-hover">
+          <div class="cb-card-header"><span class="cb-avatar">DD</span><div><div class="cb-card-title">Dedeman SRL</div><div class="cb-meta">CUI 5550330</div></div></div>
+          <dl class="cb-kv">
+            <dt>Revenue</dt><dd>8.9B RON</dd>
+            <dt>Employees</dt><dd>11,400</dd>
+            <dt>County</dt><dd>Bacău</dd>
+            <dt>Signal score</dt><dd><span class="cb-badge cb-badge-accent">72</span></dd>
+          </dl>
+        </div>
+        <div class="cb-panel">
+          <div class="cb-eyebrow">Empty state</div>
+          <div class="cb-empty">
+            <div class="cb-empty-title">No signals yet</div>
+            <div>New signals appear here as they fire.</div>
+            <button class="cb-btn cb-btn-sm cb-btn-primary" style="margin-top:0.85rem;">Run detection</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    <div class="doc-section">
+      <h2>Alerts</h2>
+      <div class="cb-stack" style="max-width:640px;">
+        <div class="cb-alert cb-alert-info">New Monitorul Oficial events were ingested.</div>
+        <div class="cb-alert cb-alert-success">Deal moved to <strong>diligence</strong>.</div>
+        <div class="cb-alert cb-alert-warning">3 deals approaching SLA breach.</div>
+        <div class="cb-alert cb-alert-error">Failed to connect to the data source.</div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="doc-section">
+      <h2>Data Table (sortable, selectable)</h2>
+      <div class="cb-table-wrap">
+        <table class="cb-table cb-table-selectable" data-cb-sortable>
+          <thead>
+            <tr>
+              <th class="is-sortable">Company <span class="cb-sort-arrow"></span></th>
+              <th class="is-sortable">County <span class="cb-sort-arrow"></span></th>
+              <th class="is-sortable cb-table-num">Revenue (M) <span class="cb-sort-arrow"></span></th>
+              <th class="is-sortable cb-table-num">Signal <span class="cb-sort-arrow"></span></th>
+              <th>Stage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Dedeman SRL</td><td>Bacău</td><td class="cb-table-num">8900</td><td class="cb-table-num">72</td><td><span class="cb-badge cb-badge-info">queued</span></td></tr>
+            <tr><td>Autonom Services</td><td>Neamț</td><td class="cb-table-num">640</td><td class="cb-table-num">88</td><td><span class="cb-badge cb-badge-accent">outreach</span></td></tr>
+            <tr><td>Cris-Tim</td><td>Ilfov</td><td class="cb-table-num">1320</td><td class="cb-table-num">54</td><td><span class="cb-badge">signal</span></td></tr>
+            <tr><td>Aquila Part Prod</td><td>Ploiești</td><td class="cb-table-num">2100</td><td class="cb-table-num">61</td><td><span class="cb-badge cb-badge-success">engaged</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cb-field-hint">Click a header to sort. Click a row to select.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="doc-section">
+      <h2>Tabs</h2>
+      <div class="cb-tabs">
+        <button class="cb-tab is-active" data-cb-tab="#tab-overview">Overview</button>
+        <button class="cb-tab" data-cb-tab="#tab-financials">Financials</button>
+        <button class="cb-tab" data-cb-tab="#tab-owners">Shareholders</button>
+      </div>
+      <div>
+        <div class="cb-tab-panel is-active" id="tab-overview">Registry data, status, CAEN, address.</div>
+        <div class="cb-tab-panel" id="tab-financials">7.9M ANAF filings, computed ratios.</div>
+        <div class="cb-tab-panel" id="tab-owners">Ownership graph and UBO chain.</div>
+      </div>
+    </div>
+
+    <!-- Overlays -->
+    <div class="doc-section">
+      <h2>Overlays &amp; Feedback</h2>
+      <div class="doc-demo">
+        <button class="cb-btn" data-cb-toggle="modal" data-cb-target="#demo-modal">Open modal</button>
+        <button class="cb-btn" data-cb-toggle="drawer" data-cb-target="#demo-drawer">Open drawer</button>
+        <div class="cb-dropdown">
+          <button class="cb-btn" data-cb-toggle="dropdown">Menu ▾</button>
+          <div class="cb-menu">
+            <button class="cb-menu-item">Add to watchlist</button>
+            <button class="cb-menu-item">Export CSV</button>
+            <div class="cb-menu-sep"></div>
+            <button class="cb-menu-item is-danger">Remove</button>
+          </div>
+        </div>
+        <button class="cb-btn" onclick="Cimbyte.toast('Saved to watchlist', {type:'success'})">Toast</button>
+        <span class="cb-tooltip" data-cb-tip="Founder age 64 · no successor"><span class="cb-badge cb-badge-warning">Succession risk</span></span>
+        <span class="cb-spinner"></span>
+        <span class="cb-kbd">⌘K</span>
+      </div>
+      <div style="max-width:420px; margin-top:1rem;">
+        <div class="cb-progress"><div class="cb-progress-bar" style="width:62%"></div></div>
+        <div class="cb-skeleton" style="width:80%; margin-top:0.75rem;"></div>
+        <div class="cb-skeleton" style="width:55%; margin-top:0.5rem;"></div>
+      </div>
+    </div>
+
+    <!-- Breadcrumb / pagination -->
+    <div class="doc-section">
+      <h2>Navigation</h2>
+      <div class="cb-breadcrumb">
+        <a href="#">Companies</a><span class="cb-breadcrumb-sep">/</span>
+        <a href="#">Bacău</a><span class="cb-breadcrumb-sep">/</span>
+        <span>Dedeman SRL</span>
+      </div>
+      <div class="cb-pagination" style="margin-top:0.85rem;">
+        <button class="cb-btn cb-btn-sm">‹</button>
+        <button class="cb-btn cb-btn-sm is-active">1</button>
+        <button class="cb-btn cb-btn-sm">2</button>
+        <button class="cb-btn cb-btn-sm">3</button>
+        <button class="cb-btn cb-btn-sm">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal markup -->
+  <div class="cb-scrim"></div>
+  <div class="cb-modal" id="demo-modal">
+    <div class="cb-modal-header">
+      <span class="cb-modal-title">Add to watchlist</span>
+      <button class="cb-icon-btn" data-cb-dismiss="modal">✕</button>
+    </div>
+    <div class="cb-modal-body">
+      <div class="cb-field"><label class="cb-label">List name</label><input class="cb-input" value="Q3 targets" /></div>
+      <label class="cb-check"><input type="checkbox" checked /> Notify on new signals</label>
+    </div>
+    <div class="cb-modal-footer">
+      <button class="cb-btn" data-cb-dismiss="modal">Cancel</button>
+      <button class="cb-btn cb-btn-primary" data-cb-dismiss="modal" onclick="Cimbyte.toast('Added', {type:'success'})">Add</button>
+    </div>
+  </div>
+
+  <!-- Drawer markup -->
+  <div class="cb-scrim"></div>
+  <div class="cb-drawer" id="demo-drawer">
+    <div class="cb-modal-header">
+      <span class="cb-modal-title">Filters</span>
+      <button class="cb-icon-btn" data-cb-dismiss="drawer">✕</button>
+    </div>
+    <div class="cb-modal-body cb-stack">
+      <div class="cb-field"><label class="cb-label">Min revenue</label><input class="cb-input" placeholder="1,000,000" /></div>
+      <div class="cb-field"><label class="cb-label">Signal type</label><select class="cb-select"><option>Succession risk</option><option>PE secondary</option></select></div>
+      <button class="cb-btn cb-btn-primary cb-btn-block" data-cb-dismiss="drawer">Apply</button>
+    </div>
+  </div>
+
+  <script src="../cimbyte.js"></script>
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      html.setAttribute("data-cb-theme", html.getAttribute("data-cb-theme") === "light" ? "dark" : "light");
+    }
+  </script>
+</body>
+</html>

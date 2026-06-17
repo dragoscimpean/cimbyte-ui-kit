@@ -1,0 +1,26 @@
+{
+  "name": "@cimbyte/ui",
+  "version": "0.1.0",
+  "description": "Cimbyte UI — standalone CSS + JS design system. Framework-agnostic, ported from the Auditore design.",
+  "type": "module",
+  "main": "cimbyte.js",
+  "style": "cimbyte.css",
+  "exports": {
+    ".": "./cimbyte.js",
+    "./css": "./cimbyte.css",
+    "./cimbyte.css": "./cimbyte.css"
+  },
+  "files": ["cimbyte.css", "cimbyte.js", "README.md"],
+  "sideEffects": ["*.css", "cimbyte.js"],
+  "scripts": {
+    "demo": "python3 -m http.server 4180 --directory ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cimbyte/cimbyte-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "license": "UNLICENSED"
+}
