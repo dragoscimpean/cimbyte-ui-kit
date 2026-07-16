@@ -14,7 +14,7 @@ The artifacts share color, spacing, radius, typography, and control-size decisio
 Install the public repository and pin it to a release:
 
 ```bash
-npm install github:dragoscimpean/cimbyte-ui-kit#v0.2.1
+npm install github:dragoscimpean/cimbyte-ui-kit#v0.2.2
 ```
 
 Import the styles and, when the app uses interactive data attributes, the optional behavior layer:
@@ -27,8 +27,8 @@ import "@cimbyte/ui";
 The CSS has no framework or runtime dependency. Plain HTML and desktop web shells can also load the release through jsDelivr:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dragoscimpean/cimbyte-ui-kit@v0.2.1/cimbyte.css">
-<script src="https://cdn.jsdelivr.net/gh/dragoscimpean/cimbyte-ui-kit@v0.2.1/cimbyte.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dragoscimpean/cimbyte-ui-kit@v0.2.2/cimbyte.css">
+<script src="https://cdn.jsdelivr.net/gh/dragoscimpean/cimbyte-ui-kit@v0.2.2/cimbyte.js" defer></script>
 ```
 
 Then use the `cb-` classes directly:
@@ -58,7 +58,7 @@ Add the Compose library:
 
 ```kotlin
 dependencies {
-    implementation("com.github.dragoscimpean:cimbyte-ui-kit:v0.2.1")
+    implementation("com.github.dragoscimpean:cimbyte-ui-kit:v0.2.2")
 }
 ```
 

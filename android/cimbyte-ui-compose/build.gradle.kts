@@ -10,7 +10,7 @@ plugins {
 
 val libraryVersion = providers.gradleProperty("CIMBYTE_VERSION")
     .orElse(providers.environmentVariable("VERSION"))
-    .getOrElse("0.2.1-SNAPSHOT")
+    .getOrElse("0.2.2-SNAPSHOT")
 val jitpackGroup = if (providers.environmentVariable("JITPACK").orNull == "true") {
     providers.environmentVariable("GROUP").orNull
         ?.let { group -> providers.environmentVariable("ARTIFACT").orNull?.let { artifact -> "$group.$artifact" } }

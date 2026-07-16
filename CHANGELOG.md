@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 — 2026-07-16
+
+- Reissued the verified Android artifact after a transient upstream JitPack dependency-resolution failure.
+
 ## 0.2.1 — 2026-07-16
 
 - Corrected the documented JitPack coordinate to its verified public repository artifact.
