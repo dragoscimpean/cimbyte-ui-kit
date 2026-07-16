@@ -23,7 +23,7 @@
       <span class="cb-brand-mark"><span></span><span></span><span></span></span>
       Cimbyte UI
     </div>
-    <span class="cb-badge cb-badge-accent">v0.1</span>
+    <span class="cb-badge cb-badge-accent">v0.2</span>
     <div class="cb-navbar-spacer"></div>
     <div class="cb-search" style="max-width:260px;">
       <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="6"/><path d="m14 14 3 3"/></svg>
@@ -36,7 +36,7 @@
     <div class="doc-hd">
       <h1 class="cb-heading">Component Catalog</h1>
     </div>
-    <p class="cb-muted">Standalone CSS + JS. Ported from the Auditore design. Link <code class="cb-mono">cimbyte.css</code>, use <code class="cb-mono">cb-*</code> classes.</p>
+    <p class="cb-muted">Shared web and Android design system. Link <code class="cb-mono">cimbyte.css</code>, use <code class="cb-mono">cb-*</code> classes, or consume the native Compose artifact.</p>
 
     <!-- Buttons -->
     <div class="doc-section">
@@ -68,7 +68,7 @@
     <!-- Forms -->
     <div class="doc-section">
       <h2>Forms</h2>
-      <div class="cb-grid" style="grid-template-columns:1fr 1fr; max-width:640px;">
+      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:1fr 1fr; max-width:640px;">
         <div class="cb-field">
           <label class="cb-label">Company name</label>
           <input class="cb-input" placeholder="e.g. Dedeman SRL" />
@@ -123,12 +123,12 @@
     <!-- Cards & stats -->
     <div class="doc-section">
       <h2>Cards, Stats &amp; Key/Value</h2>
-      <div class="cb-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:repeat(3,1fr);">
         <div class="cb-stat"><div class="cb-stat-label">Companies</div><div class="cb-stat-value">4.02M</div><div class="cb-stat-delta is-up">▲ 12k this week</div></div>
         <div class="cb-stat"><div class="cb-stat-label">Open deals</div><div class="cb-stat-value">37</div><div class="cb-stat-delta is-down">▼ 3 vs last week</div></div>
         <div class="cb-stat"><div class="cb-stat-label">SLA breaches</div><div class="cb-stat-value">5</div><div class="cb-stat-delta">stable</div></div>
       </div>
-      <div class="cb-grid" style="grid-template-columns:1fr 1fr; margin-top:1rem;">
+      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:1fr 1fr; margin-top:1rem;">
         <div class="cb-card cb-card-hover">
           <div class="cb-card-header"><span class="cb-avatar">DD</span><div><div class="cb-card-title">Dedeman SRL</div><div class="cb-meta">CUI 5550330</div></div></div>
           <dl class="cb-kv">
@@ -241,6 +241,281 @@
         <button class="cb-btn cb-btn-sm">2</button>
         <button class="cb-btn cb-btn-sm">3</button>
         <button class="cb-btn cb-btn-sm">›</button>
+      </div>
+    </div>
+
+    <!-- Workspace chrome -->
+    <div class="doc-section">
+      <h2>Workspace Chrome</h2>
+      <div class="cb-panel" style="padding:0; overflow:hidden; min-height:330px;">
+        <div class="cb-page-head" style="padding:1rem;">
+          <div class="cb-page-head-main">
+            <div class="cb-eyebrow cb-eyebrow-mono">Workspace</div>
+            <h3 class="cb-page-head-title">Project overview</h3>
+            <p class="cb-page-head-copy">A responsive heading with contextual actions.</p>
+          </div>
+          <div class="cb-page-head-actions">
+            <button class="cb-btn cb-btn-sm">Share</button>
+            <button class="cb-btn cb-btn-sm cb-btn-primary">Create</button>
+          </div>
+        </div>
+        <div class="cb-toolbar cb-toolbar-flat">
+          <div class="cb-toolbar-group">
+            <button class="cb-icon-btn" aria-label="Back">←</button>
+            <button class="cb-icon-btn" aria-label="Forward">→</button>
+          </div>
+          <span class="cb-toolbar-label">main / overview</span>
+          <span class="cb-toolbar-spacer"></span>
+          <div class="cb-segmented" aria-label="View mode">
+            <button class="cb-segment is-selected" aria-pressed="true">List</button>
+            <button class="cb-segment" aria-pressed="false">Grid</button>
+          </div>
+        </div>
+        <div style="display:flex; min-height:190px;">
+          <nav class="cb-activity-bar" aria-label="Workspace views">
+            <button class="cb-activity-item is-active" aria-current="page" aria-label="Files">▤</button>
+            <button class="cb-activity-item" aria-label="Search">⌕</button>
+            <button class="cb-activity-item" aria-label="History">↻</button>
+          </nav>
+          <div style="flex:1; min-width:0;">
+            <div class="cb-document-tabs" role="tablist" aria-label="Open documents">
+              <button class="cb-document-tab is-active" role="tab" aria-selected="true"><span class="cb-document-tab-label">overview.md</span><span class="cb-document-tab-close">×</span></button>
+              <button class="cb-document-tab is-dirty" role="tab" aria-selected="false"><span class="cb-document-tab-label">settings.json</span><span class="cb-document-tab-close">×</span></button>
+            </div>
+            <div style="padding:1rem;">
+              <div class="cb-section-label">Recent activity</div>
+              <p class="cb-muted">Document tabs, activity navigation, toolbars, and status information share one compact shell.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cb-statusbar">
+          <span class="cb-statusbar-section"><span class="cb-dot cb-dot-sm" style="background:var(--cb-success)"></span> Ready</span>
+          <span class="cb-statusbar-spacer"></span>
+          <span class="cb-statusbar-section">UTF-8</span>
+          <span class="cb-statusbar-section">Ln 12, Col 8</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layouts and trees -->
+    <div class="doc-section">
+      <h2>Layouts, Splitters &amp; Trees</h2>
+      <div class="cb-master-detail cb-panel" style="height:300px; padding:0;">
+        <div class="cb-master-pane" style="padding:0.65rem;">
+          <div class="cb-section-label" style="margin:0.25rem 0.35rem 0.5rem;">Library</div>
+          <ul class="cb-tree" role="tree" aria-label="Example tree">
+            <li role="none">
+              <div class="cb-tree-row" role="treeitem" aria-expanded="true" aria-selected="true" tabindex="0">
+                <span class="cb-tree-toggle cb-chevron" aria-hidden="true">›</span>
+                <span class="cb-tree-icon">◇</span>
+                <span class="cb-tree-label">Workspace</span>
+                <span class="cb-tree-meta">12</span>
+                <span class="cb-tree-actions"><button class="cb-icon-btn cb-icon-btn-sm" aria-label="Add item">+</button></span>
+              </div>
+              <ul class="cb-tree-group" role="group">
+                <li role="none"><div class="cb-tree-row" role="treeitem" tabindex="0"><span class="cb-tree-toggle"></span><span class="cb-tree-icon">□</span><span class="cb-tree-label">Planning</span><span class="cb-tree-meta">4</span></div></li>
+                <li role="none"><div class="cb-tree-row" role="treeitem" tabindex="0"><span class="cb-tree-toggle"></span><span class="cb-tree-icon">□</span><span class="cb-tree-label">Research</span><span class="cb-tree-meta">8</span></div></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="cb-detail-pane" style="padding:1rem;">
+          <div class="cb-content-aside">
+            <div class="cb-content">
+              <h3 class="cb-card-title">Responsive master and detail</h3>
+              <p class="cb-muted">The detail pane replaces the master pane below the compact breakpoint when <code class="cb-code">is-detail-open</code> is set.</p>
+            </div>
+            <aside class="cb-aside cb-panel" style="padding:0.75rem;">
+              <div class="cb-eyebrow">Aside</div>
+              <div class="cb-meta" style="margin-top:0.35rem;">Contextual details</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <div class="cb-split cb-panel" style="height:110px; padding:0; margin-top:0.75rem;">
+        <div class="cb-split-pane" style="padding:0.75rem;">Flexible pane</div>
+        <button class="cb-splitter" role="separator" aria-orientation="vertical" aria-label="Resize panes"></button>
+        <div class="cb-split-pane" style="padding:0.75rem;">Flexible pane</div>
+      </div>
+    </div>
+
+    <!-- Settings and form layouts -->
+    <div class="doc-section">
+      <h2>Settings, Disclosure &amp; Form Layouts</h2>
+      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));">
+        <div class="cb-settings">
+          <div class="cb-setting-row">
+            <div class="cb-setting-main"><div class="cb-setting-title">Automatic updates</div><div class="cb-setting-copy">Install stable releases when they become available.</div></div>
+            <div class="cb-setting-action"><label class="cb-switch"><input type="checkbox" checked aria-label="Automatic updates" /><span class="cb-switch-track"></span></label></div>
+          </div>
+          <div class="cb-setting-row">
+            <div class="cb-setting-main"><div class="cb-setting-title">Default location</div><div class="cb-setting-copy">Choose where new files are stored.</div></div>
+            <div class="cb-setting-action"><button class="cb-btn cb-btn-sm">Choose</button></div>
+          </div>
+        </div>
+        <details class="cb-disclosure" open>
+          <summary>Advanced options</summary>
+          <div class="cb-disclosure-body">
+            <div class="cb-form-grid cb-form-grid-2">
+              <div class="cb-field"><label class="cb-label">Region</label><select class="cb-select cb-input-sm"><option>Automatic</option></select></div>
+              <div class="cb-field"><label class="cb-label">Timeout</label><input class="cb-input cb-input-sm" value="30" /></div>
+              <div class="cb-field cb-field-span"><label class="cb-label">Notes</label><textarea class="cb-textarea" placeholder="Optional"></textarea></div>
+            </div>
+          </div>
+        </details>
+      </div>
+      <form class="cb-form-inline cb-panel" style="margin-top:0.75rem;">
+        <div class="cb-field"><label class="cb-label">Name</label><input class="cb-input cb-input-sm" placeholder="Item name" /></div>
+        <div class="cb-field"><label class="cb-label">Type</label><select class="cb-select cb-input-sm"><option>Standard</option></select></div>
+        <button class="cb-btn cb-btn-primary">Add item</button>
+      </form>
+      <div class="cb-field" style="max-width:520px; margin-top:0.75rem;">
+        <label class="cb-label" id="people-label">People</label>
+        <div class="cb-combobox">
+          <div class="cb-combobox-control">
+            <span class="cb-token-list">
+              <span class="cb-token"><span class="cb-token-label">Alex Morgan</span><button class="cb-token-remove" aria-label="Remove Alex Morgan">×</button></span>
+            </span>
+            <input class="cb-input" role="combobox" aria-labelledby="people-label" aria-controls="people-options" aria-expanded="true" aria-autocomplete="list" placeholder="Add a person…" />
+          </div>
+          <div class="cb-combobox-menu" id="people-options" role="listbox" style="position:relative; top:auto; margin-top:4px;">
+            <button class="cb-combobox-option is-active" role="option" aria-selected="true"><span class="cb-avatar cb-avatar-sm">JD</span><span>Jordan Davis</span><span class="cb-combobox-option-meta">Owner</span></button>
+            <button class="cb-combobox-option" role="option" aria-selected="false"><span class="cb-avatar cb-avatar-sm">SK</span><span>Sam Kim</span><span class="cb-combobox-option-meta">Member</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selection and uploads -->
+    <div class="doc-section">
+      <h2>Selection, Bulk Actions &amp; Uploads</h2>
+      <div class="cb-bulk-bar">
+        <span class="cb-bulk-count">3 selected</span>
+        <span class="cb-bulk-spacer"></span>
+        <div class="cb-bulk-actions"><button class="cb-btn cb-btn-sm">Move</button><button class="cb-btn cb-btn-sm cb-btn-danger-outline">Remove</button><button class="cb-btn cb-btn-sm cb-btn-ghost">Clear</button></div>
+      </div>
+      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); margin-top:0.75rem;">
+        <div class="cb-card cb-card-selectable is-selected" role="option" aria-selected="true" tabindex="0">
+          <div class="cb-card-title-row"><div class="cb-card-title">Selected item</div><span class="cb-badge cb-badge-accent">Active</span></div>
+          <p class="cb-muted">Selection, processing, checked, and drop-target states are additive.</p>
+        </div>
+        <div class="cb-card cb-card-selectable is-processing" role="option" aria-selected="false" tabindex="0">
+          <div class="cb-card-title-row"><div class="cb-card-title">Processing item</div><span class="cb-spinner"></span></div>
+          <div class="cb-progress" style="margin-top:0.75rem;"><div class="cb-progress-bar" style="width:54%"></div></div>
+        </div>
+      </div>
+      <div class="cb-dropzone" style="margin-top:0.75rem;">
+        <div class="cb-dropzone-content">
+          <span class="cb-dropzone-icon" aria-hidden="true">↑</span>
+          <div class="cb-dropzone-title">Drop files here</div>
+          <div class="cb-dropzone-copy">Or choose files from your device.</div>
+          <button class="cb-btn cb-btn-sm" style="margin-top:0.4rem;">Choose files</button>
+        </div>
+      </div>
+      <div class="cb-upload-list" style="margin-top:0.75rem;">
+        <div class="cb-upload-item">
+          <div class="cb-upload-head"><span class="cb-upload-name">example-document.pdf</span><span class="cb-progress-meta">68%</span></div>
+          <div class="cb-progress"><div class="cb-progress-bar" style="width:68%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data grid -->
+    <div class="doc-section">
+      <h2>Dense Data Grid</h2>
+      <div class="cb-data-grid" style="max-height:250px;">
+        <table class="cb-table cb-table-dense cb-table-sticky">
+          <thead><tr>
+            <th>Name<button class="cb-column-resizer" aria-label="Resize name column"></button></th>
+            <th>Status<button class="cb-column-resizer" aria-label="Resize status column"></button></th>
+            <th class="cb-table-num">Value<button class="cb-column-resizer" aria-label="Resize value column"></button></th>
+            <th>Actions</th>
+          </tr></thead>
+          <tbody>
+            <tr><td class="is-active"><div class="cb-table-identity"><span class="cb-avatar cb-avatar-sm">A</span><span class="cb-table-identity-main"><span class="cb-table-identity-title">Alpha</span><span class="cb-table-identity-meta">Updated now</span></span></div></td><td><span class="cb-status is-success"><span class="cb-dot"></span>Ready</span></td><td><div class="cb-meter"><span class="cb-meter-track"><span class="cb-meter-fill" style="display:block; width:72%;"></span></span><span class="cb-meter-value">128</span></div></td><td><div class="cb-row-actions"><button class="cb-icon-btn cb-icon-btn-sm" aria-label="Edit Alpha">✎</button></div></td></tr>
+            <tr class="is-warning"><td>Beta</td><td><span class="cb-badge cb-badge-warning">Review</span></td><td class="cb-table-num">92</td><td><div class="cb-row-actions"><button class="cb-icon-btn cb-icon-btn-sm" aria-label="Edit Beta">✎</button></div></td></tr>
+            <tr class="is-error"><td>Gamma</td><td><span class="cb-badge cb-badge-error">Failed</span></td><td class="cb-table-num cb-cell-error">—</td><td><div class="cb-row-actions"><button class="cb-icon-btn cb-icon-btn-sm" aria-label="Retry Gamma">↻</button></div></td></tr>
+            <tr><td>Delta</td><td><span class="cb-badge">Queued</span></td><td class="cb-table-num">64</td><td><div class="cb-row-actions"><button class="cb-icon-btn cb-icon-btn-sm" aria-label="Edit Delta">✎</button></div></td></tr>
+          </tbody>
+        </table>
+        <div class="cb-grid-footer"><span>4 rows</span><span class="cb-statusbar-spacer"></span><span>Updated now</span></div>
+      </div>
+    </div>
+
+    <!-- Find, inspect, code, media -->
+    <div class="doc-section">
+      <h2>Find, Inspect, Code &amp; Media</h2>
+      <div class="cb-content-aside">
+        <div class="cb-content cb-stack">
+          <div class="cb-findbar" role="search">
+            <input class="cb-input cb-input-sm" aria-label="Find" value="sample" />
+            <span class="cb-findbar-results">2 / 5</span>
+            <button class="cb-icon-btn" aria-label="Previous match">↑</button>
+            <button class="cb-icon-btn" aria-label="Next match">↓</button>
+            <button class="cb-icon-btn" aria-label="Close find">×</button>
+          </div>
+          <div class="cb-code-block">
+            <div class="cb-code-header"><span>example.js</span><button class="cb-btn cb-btn-xs cb-btn-ghost">Copy</button></div>
+            <pre class="cb-code-content"><code>const sample = items.filter(item =&gt; item.active);
+return sample.length;</code></pre>
+          </div>
+          <div class="cb-diff" aria-label="Example changes">
+            <div class="cb-diff-row is-hunk"><span class="cb-diff-gutter">12</span><span class="cb-diff-sign">@@</span><span class="cb-diff-text">example change</span></div>
+            <div class="cb-diff-row is-removed"><span class="cb-diff-gutter">13</span><span class="cb-diff-sign">−</span><span class="cb-diff-text">old value</span></div>
+            <div class="cb-diff-row is-added"><span class="cb-diff-gutter">13</span><span class="cb-diff-sign">+</span><span class="cb-diff-text">new value</span></div>
+            <div class="cb-diff-row"><span class="cb-diff-gutter">14</span><span class="cb-diff-sign"> </span><span class="cb-diff-text">unchanged value</span></div>
+          </div>
+        </div>
+        <aside class="cb-inspector">
+          <div class="cb-inspector-header"><span>Inspector</span><span class="cb-navbar-spacer"></span><button class="cb-icon-btn cb-icon-btn-sm" aria-label="Close inspector">×</button></div>
+          <div class="cb-inspector-body">
+            <div class="cb-inspector-section">
+              <div class="cb-section-label">Properties</div>
+              <div class="cb-inspector-row"><span class="cb-inspector-label">Type</span><span class="cb-inspector-value">Document</span></div>
+              <div class="cb-inspector-row"><span class="cb-inspector-label">Owner</span><span class="cb-inspector-value">Workspace team</span></div>
+              <div class="cb-inspector-row"><span class="cb-inspector-label">Modified</span><span class="cb-inspector-value cb-mono">10:42</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="cb-media-row" style="margin-top:0.75rem;">
+        <button class="cb-icon-btn-circle" aria-label="Play">▶</button>
+        <div class="cb-media-main">
+          <div class="cb-media-title">Audio preview</div>
+          <div class="cb-media-controls"><span class="cb-media-time">0:42</span><input class="cb-range" type="range" min="0" max="100" value="36" aria-label="Playback position" /><span class="cb-media-time">2:04</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rich empty, skeleton, auth -->
+    <div class="doc-section">
+      <h2>Rich States &amp; Auth</h2>
+      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));">
+        <div class="cb-panel">
+          <div class="cb-empty cb-empty-rich">
+            <div class="cb-empty-icon" aria-hidden="true">◇</div>
+            <div class="cb-empty-title">Nothing here yet</div>
+            <p class="cb-empty-copy">Create an item or adjust the active filters to get started.</p>
+            <div class="cb-empty-actions"><button class="cb-btn cb-btn-sm cb-btn-primary">Create item</button><button class="cb-btn cb-btn-sm">Clear filters</button></div>
+          </div>
+          <div class="cb-skeleton-list">
+            <div class="cb-skeleton-row"><span class="cb-skeleton cb-skeleton-avatar"></span><span class="cb-skeleton-body"><span class="cb-skeleton cb-skeleton-line-lg"></span><span class="cb-skeleton cb-skeleton-line-sm"></span></span></div>
+            <div class="cb-skeleton-row"><span class="cb-skeleton cb-skeleton-avatar"></span><span class="cb-skeleton-body"><span class="cb-skeleton cb-skeleton-line-lg"></span><span class="cb-skeleton cb-skeleton-line-sm"></span></span></div>
+          </div>
+        </div>
+        <div class="cb-auth-shell" style="min-height:440px; border:1px solid var(--cb-line); border-radius:var(--cb-radius-lg);">
+          <div class="cb-auth-wrap">
+            <div class="cb-auth-brand"><span class="cb-brand-mark"><span></span><span></span><span></span></span>Cimbyte</div>
+            <div class="cb-auth-card">
+              <h3 class="cb-auth-title">Welcome back</h3>
+              <p class="cb-auth-copy">Sign in to continue to your workspace.</p>
+              <div class="cb-field"><label class="cb-label">Email</label><input class="cb-input" type="email" placeholder="name@example.com" /></div>
+              <div class="cb-field"><label class="cb-label">Password</label><input class="cb-input" type="password" placeholder="Password" /></div>
+              <button class="cb-btn cb-btn-primary cb-btn-block">Sign in</button>
+            </div>
+            <div class="cb-auth-footer">Need access? Contact your workspace administrator.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

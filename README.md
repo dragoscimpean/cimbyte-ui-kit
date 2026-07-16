@@ -1,58 +1,130 @@
 # Cimbyte UI
 
-Standalone CSS + JS design system. Framework-agnostic — works in React, Svelte, or plain HTML. No build step, no dependencies. Ported from the Auditore design language (OKLCH dark theme, Inter Tight + JetBrains Mono).
+Cimbyte UI is the shared design system for Cimbyte products. It ships two native artifacts from one set of design tokens:
 
-## Install
+| Target | Artifact | Best for |
+|---|---|---|
+| Web and desktop web shells | `@cimbyte/ui` CSS + optional vanilla JS | Browser apps, React, Svelte, Electron, and Tauri |
+| Android | `cimbyte-ui-compose` AAR | Native Jetpack Compose apps |
 
-Private package — install straight from the git repo (no registry needed), pinned to a tag:
+The artifacts share color, spacing, radius, typography, and control-size decisions. Components are implemented natively for each platform: Android does not embed the web catalog in a WebView.
+
+## Web installation
+
+Install the public repository and pin it to a release:
 
 ```bash
-npm install git+ssh://git@github.com/cimbyte/cimbyte-ui-kit.git#v0.1.0
+npm install github:dragoscimpean/cimbyte-ui-kit#v0.2.0
 ```
 
-Then in your app entry:
+Import the styles and, when the app uses interactive data attributes, the optional behavior layer:
 
 ```js
-import "@cimbyte/ui/css";   // styles
-import "@cimbyte/ui";        // optional interactive behaviors (window.Cimbyte)
+import "@cimbyte/ui/css";
+import "@cimbyte/ui";
 ```
 
-Or drop the files in directly (plain HTML, no bundler):
+The CSS has no framework or runtime dependency. Plain HTML and desktop web shells can also load the release through jsDelivr:
 
 ```html
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="cimbyte.css">
-<script src="cimbyte.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dragoscimpean/cimbyte-ui-kit@v0.2.0/cimbyte.css">
+<script src="https://cdn.jsdelivr.net/gh/dragoscimpean/cimbyte-ui-kit@v0.2.0/cimbyte.js" defer></script>
 ```
 
-Then just use classes — no setup, no build:
+Then use the `cb-` classes directly:
 
 ```html
-<button class="cb-btn cb-btn-primary">Search</button>
-<div class="cb-card">…</div>
+<button class="cb-btn cb-btn-accent">Save</button>
+<section class="cb-card">...</section>
 ```
 
-## Interactive behaviors (data-attributes)
+Dark mode is the default. Set `<html data-cb-theme="light">` for light mode, or override semantic CSS variables such as `--cb-accent`, `--cb-bg`, and `--cb-ink` at an application boundary.
 
-| What | Markup |
-|---|---|
-| Dropdown | `<button data-cb-toggle="dropdown">` + sibling `.cb-menu` |
-| Modal | `data-cb-toggle="modal" data-cb-target="#id"`, dismiss with `data-cb-dismiss="modal"` |
-| Drawer | `data-cb-toggle="drawer" data-cb-target="#id"` |
-| Tabs | `.cb-tab[data-cb-tab="#panelId"]` + `.cb-tab-panel#panelId` |
-| Sort table | `<table class="cb-table" data-cb-sortable>` + `th.is-sortable` |
-| Toast | `Cimbyte.toast("Saved", { type: "success" })` |
+## Android installation
 
-## Theme
+Public Android releases are available through JitPack. Add its repository in `settings.gradle.kts`:
 
-Dark by default. Light theme: `<html data-cb-theme="light">`. Override any token via CSS variables (`--cb-accent`, `--cb-bg`, `--cb-ink`, …).
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven(url = "https://jitpack.io")
+    }
+}
+```
 
-## Catalog
+Add the Compose library:
 
-Open `demo/index.html` (or `npm run demo` → http://localhost:4180/demo/) — every component, also serves as the visual test.
+```kotlin
+dependencies {
+    implementation("com.github.dragoscimpean.cimbyte-ui-kit:cimbyte-ui-compose:v0.2.0")
+}
+```
 
-## Files
+Use the native theme and components:
 
-- `cimbyte.css` — tokens + all component styles (the only required file)
-- `cimbyte.js` — optional vanilla behaviors for interactive components
+```kotlin
+import ro.cimbyte.ui.CimbyteButton
+import ro.cimbyte.ui.CimbyteButtonVariant
+import ro.cimbyte.ui.CimbyteCard
+import ro.cimbyte.ui.CimbyteSectionHeader
+import ro.cimbyte.ui.CimbyteTheme
+
+CimbyteTheme {
+    CimbyteCard {
+        CimbyteSectionHeader(
+            title = "Workspace",
+            subtitle = "Native Android UI",
+        )
+        CimbyteButton(
+            onClick = ::save,
+            variant = CimbyteButtonVariant.Accent,
+        ) {
+            Text("Save")
+        }
+    }
+}
+```
+
+The Android public API also includes badges, empty and loading states, settings rows, and code blocks. `CimbyteTheme.colors`, `CimbyteTheme.dimensions`, `CimbyteTheme.typography`, `CimbyteFonts.sans`, and `CimbyteFonts.mono` expose the shared visual language to application-specific composables.
+
+## Component catalog
+
+Run `npm run demo`, then open [http://localhost:4180/demo/](http://localhost:4180/demo/). The catalog covers:
+
+- Buttons, form controls, comboboxes, token inputs, badges, pills, alerts, cards, stats, identity cells, status indicators, and meters
+- Data tables and dense grids, trees, tabs, document tabs, toolbars, status bars, find bars, inspector panes, split views, master/detail layouts, and responsive workspace shells
+- Settings and disclosure rows, selectable cards, bulk actions, drop zones, upload rows, empty/loading states, authentication layouts, code/diff blocks, and media controls
+- Accessible keyboard behavior for dropdowns, dialogs, drawers, tabs, pills, sortable tables, selectable rows, and toasts
+
+The generic visual and interaction patterns found in Auditore, Intelligence v2, Dbzator, and Nomadic belong here. Product workflows, domain rules, data access, editors, and provider integrations remain in their applications.
+
+## Design tokens
+
+[`tokens/cimbyte.tokens.json`](tokens/cimbyte.tokens.json) is the canonical source for both platforms. Generated CSS variables live at the top of `cimbyte.css`; generated Compose values live in `GeneratedCimbyteTokens.kt`.
+
+```bash
+npm run generate        # regenerate both outputs
+npm run generate:check  # fail when generated files have drifted
+```
+
+Change semantic tokens rather than editing either generated block. Application-specific composition can use the tokens without adding every application component to the kit.
+
+## Development and release checks
+
+Requirements for Android work are JDK 17, Android SDK 35, and Kotlin/Compose compiler 2.0.21.
+
+```bash
+npm run check
+npm run android:assemble
+npm pack --dry-run
+```
+
+Pushing a `v*` tag verifies both artifacts and creates a GitHub release containing the web tarball and Android AAR. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the change boundary and verification workflow.
+
+## License
+
+MIT
+
+Bundled Android fonts retain their original licenses in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).

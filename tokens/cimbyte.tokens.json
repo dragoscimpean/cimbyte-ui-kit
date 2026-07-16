@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "cssVariables": {
+    "accent-h": "30"
+  },
+  "fonts": {
+    "sans": {
+      "css": "\"Inter Tight\", -apple-system, system-ui, sans-serif"
+    },
+    "mono": {
+      "css": "\"JetBrains Mono\", ui-monospace, Menlo, monospace"
+    }
+  },
+  "dimensions": {
+    "radius-sm": { "css": "8px", "androidDp": 8, "composeName": "radiusSmall" },
+    "radius": { "css": "10px", "androidDp": 10, "composeName": "radiusMedium" },
+    "radius-lg": { "css": "14px", "androidDp": 14, "composeName": "radiusLarge" },
+    "radius-xl": { "css": "16px", "androidDp": 16, "composeName": "radiusExtraLarge" },
+    "radius-pill": { "css": "999px", "androidDp": 999, "composeName": "radiusPill" },
+    "space-xs": { "css": "4px", "androidDp": 4, "composeName": "spacingExtraSmall" },
+    "space-sm": { "css": "8px", "androidDp": 8, "composeName": "spacingSmall" },
+    "space-md": { "css": "12px", "androidDp": 12, "composeName": "spacingMedium" },
+    "space-lg": { "css": "16px", "androidDp": 16, "composeName": "spacingLarge" },
+    "space-xl": { "css": "24px", "androidDp": 24, "composeName": "spacingExtraLarge" },
+    "control-sm": { "css": "32px", "androidDp": 32, "composeName": "controlHeightSmall" },
+    "control": { "css": "40px", "androidDp": 40, "composeName": "controlHeightMedium" },
+    "control-lg": { "css": "48px", "androidDp": 48, "composeName": "controlHeightLarge" }
+  },
+  "shadows": {
+    "shadow-sm": "0 1px 0 oklch(0 0 0 / 0.03), 0 1px 2px oklch(0 0 0 / 0.04)",
+    "shadow": "0 1px 0 oklch(0 0 0 / 0.03), 0 8px 24px -10px oklch(0 0 0 / 0.10)",
+    "shadow-lg": "0 20px 50px -20px oklch(0 0 0 / 0.20)"
+  },
+  "themes": {
+    "dark": {
+      "colorScheme": "dark",
+      "colors": {
+        "accent": { "cssName": "accent", "css": "oklch(0.62 0.18 var(--cb-accent-h))", "androidArgb": "FFDD503F", "composeName": "accent" },
+        "accentHover": { "cssName": "accent-hover", "css": "oklch(0.56 0.18 var(--cb-accent-h))", "androidArgb": "FFC83B2C" },
+        "accentContent": { "cssName": "accent-content", "css": "oklch(0.98 0 0)", "androidArgb": "FFFFFFFF", "composeName": "onAccent" },
+        "accentSoft": { "cssName": "accent-soft", "css": "oklch(0.28 0.06 var(--cb-accent-h))", "androidArgb": "FF421C16", "composeName": "accentSoft" },
+        "background": { "cssName": "bg", "css": "oklch(0.18 0.015 260)", "androidArgb": "FF0E1218", "composeName": "background" },
+        "backgroundSecondary": { "cssName": "bg-2", "css": "oklch(0.21 0.015 260)", "androidArgb": "FF14181F", "composeName": "backgroundSecondary" },
+        "backgroundTertiary": { "cssName": "bg-3", "css": "oklch(0.25 0.015 260)", "androidArgb": "FF1D2229", "composeName": "backgroundTertiary" },
+        "surface": { "cssName": "paper", "css": "oklch(0.22 0.015 260)", "androidArgb": "FF171B22", "composeName": "surface" },
+        "textPrimary": { "cssName": "ink", "css": "oklch(0.95 0.005 250)", "androidArgb": "FFECEFF2", "composeName": "textPrimary" },
+        "textSecondary": { "cssName": "ink-80", "css": "oklch(0.85 0.005 250)", "androidArgb": "FFCBCED1", "composeName": "textSecondary" },
+        "textSubtle": { "cssName": "ink-60", "css": "oklch(0.7 0.01 260)", "androidArgb": "FF9B9FA5" },
+        "textMuted": { "cssName": "ink-50", "css": "oklch(0.6 0.01 260)", "androidArgb": "FF7D8086", "composeName": "textMuted" },
+        "textFaint": { "cssName": "ink-40", "css": "oklch(0.5 0.01 260)", "androidArgb": "FF606369" },
+        "textGhost": { "cssName": "ink-30", "css": "oklch(0.4 0.01 260)", "androidArgb": "FF45484D" },
+        "textGhostSoft": { "cssName": "ink-25", "css": "oklch(0.34 0.01 260)", "androidArgb": "FF35383D" },
+        "textGhostFaint": { "cssName": "ink-15", "css": "oklch(0.3 0.01 260)", "androidArgb": "FF2B2E33" },
+        "border": { "cssName": "line", "css": "oklch(0.32 0.01 260)", "androidArgb": "FF303338", "composeName": "border" },
+        "borderSoft": { "cssName": "line-soft", "css": "oklch(0.27 0.01 260)", "androidArgb": "FF24272B", "composeName": "borderSoft" },
+        "error": { "cssName": "error", "css": "oklch(0.60 0.20 25)", "androidArgb": "FFDE3B3D", "composeName": "error" },
+        "errorSoft": { "cssName": "error-soft", "css": "oklch(0.60 0.20 25 / 0.10)", "androidArgb": "1ADE3B3D", "composeName": "errorSoft" },
+        "success": { "cssName": "success", "css": "oklch(0.65 0.20 145)", "androidArgb": "FF11AD32", "composeName": "success" },
+        "successSoft": { "cssName": "success-soft", "css": "oklch(0.65 0.20 145 / 0.10)", "androidArgb": "1A11AD32", "composeName": "successSoft" },
+        "warning": { "cssName": "warning", "css": "oklch(0.75 0.15 80)", "androidArgb": "FFDFA11A", "composeName": "warning" },
+        "warningSoft": { "cssName": "warning-soft", "css": "oklch(0.75 0.15 80 / 0.12)", "androidArgb": "1FDFA11A", "composeName": "warningSoft" },
+        "info": { "cssName": "info", "css": "oklch(0.65 0.15 245)", "androidArgb": "FF2696E4", "composeName": "info" },
+        "infoSoft": { "cssName": "info-soft", "css": "oklch(0.65 0.15 245 / 0.12)", "androidArgb": "1F2696E4", "composeName": "infoSoft" }
+      }
+    },
+    "light": {
+      "colorScheme": "light",
+      "colors": {
+        "accent": { "cssName": "accent", "css": "oklch(0.62 0.18 var(--cb-accent-h))", "androidArgb": "FFDD503F", "composeName": "accent" },
+        "accentHover": { "cssName": "accent-hover", "css": "oklch(0.56 0.18 var(--cb-accent-h))", "androidArgb": "FFC83B2C" },
+        "accentContent": { "cssName": "accent-content", "css": "oklch(0.98 0 0)", "androidArgb": "FFFFFFFF", "composeName": "onAccent" },
+        "accentSoft": { "cssName": "accent-soft", "css": "oklch(0.93 0.05 var(--cb-accent-h))", "androidArgb": "FFFFDCD4", "composeName": "accentSoft" },
+        "background": { "cssName": "bg", "css": "oklch(0.98 0.003 260)", "androidArgb": "FFF7F8FA", "composeName": "background" },
+        "backgroundSecondary": { "cssName": "bg-2", "css": "oklch(0.96 0.004 260)", "androidArgb": "FFF0F2F4", "composeName": "backgroundSecondary" },
+        "backgroundTertiary": { "cssName": "bg-3", "css": "oklch(0.93 0.005 260)", "androidArgb": "FFE6E8EB", "composeName": "backgroundTertiary" },
+        "surface": { "cssName": "paper", "css": "oklch(1 0 0)", "androidArgb": "FFFFFFFF", "composeName": "surface" },
+        "textPrimary": { "cssName": "ink", "css": "oklch(0.22 0.01 260)", "androidArgb": "FF181B1F", "composeName": "textPrimary" },
+        "textSecondary": { "cssName": "ink-80", "css": "oklch(0.32 0.01 260)", "androidArgb": "FF303338", "composeName": "textSecondary" },
+        "textSubtle": { "cssName": "ink-60", "css": "oklch(0.45 0.01 260)", "androidArgb": "FF52555B" },
+        "textMuted": { "cssName": "ink-50", "css": "oklch(0.55 0.01 260)", "androidArgb": "FF6E7278", "composeName": "textMuted" },
+        "textFaint": { "cssName": "ink-40", "css": "oklch(0.62 0.01 260)", "androidArgb": "FF83868C" },
+        "textGhost": { "cssName": "ink-30", "css": "oklch(0.70 0.01 260)", "androidArgb": "FF9B9FA5" },
+        "textGhostSoft": { "cssName": "ink-25", "css": "oklch(0.78 0.008 260)", "androidArgb": "FFB4B7BD" },
+        "textGhostFaint": { "cssName": "ink-15", "css": "oklch(0.88 0.006 260)", "androidArgb": "FFD5D8DB" },
+        "border": { "cssName": "line", "css": "oklch(0.88 0.006 260)", "androidArgb": "FFD5D8DB", "composeName": "border" },
+        "borderSoft": { "cssName": "line-soft", "css": "oklch(0.92 0.005 260)", "androidArgb": "FFE3E5E8", "composeName": "borderSoft" },
+        "error": { "cssName": "error", "css": "oklch(0.55 0.20 25)", "androidArgb": "FFCC272E", "composeName": "error" },
+        "errorSoft": { "cssName": "error-soft", "css": "oklch(0.55 0.20 25 / 0.08)", "androidArgb": "14CC272E", "composeName": "errorSoft" },
+        "success": { "cssName": "success", "css": "oklch(0.52 0.17 145)", "androidArgb": "FF00801A", "composeName": "success" },
+        "successSoft": { "cssName": "success-soft", "css": "oklch(0.52 0.17 145 / 0.08)", "androidArgb": "1400801A", "composeName": "successSoft" },
+        "warning": { "cssName": "warning", "css": "oklch(0.58 0.15 80)", "androidArgb": "FFA86D00", "composeName": "warning" },
+        "warningSoft": { "cssName": "warning-soft", "css": "oklch(0.58 0.15 80 / 0.09)", "androidArgb": "17A86D00", "composeName": "warningSoft" },
+        "info": { "cssName": "info", "css": "oklch(0.55 0.15 245)", "androidArgb": "FF0077C2", "composeName": "info" },
+        "infoSoft": { "cssName": "info-soft", "css": "oklch(0.55 0.15 245 / 0.08)", "androidArgb": "140077C2", "composeName": "infoSoft" }
+      }
+    }
+  }
+}
