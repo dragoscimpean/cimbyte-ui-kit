@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 — 2026-07-16
+
+- Corrected the documented JitPack coordinate to its verified public repository artifact.
+
 ## 0.2.0 — 2026-07-16
 
 - Added the native `cimbyte-ui-compose` Android library and shared generated tokens.

@@ -26,7 +26,7 @@ Then add the tagged release:
 
 ```kotlin
 dependencies {
-    implementation("com.github.dragoscimpean.cimbyte-ui-kit:cimbyte-ui-compose:v0.2.0")
+    implementation("com.github.dragoscimpean:cimbyte-ui-kit:v0.2.1")
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 ./gradlew :cimbyte-ui-compose:publishToMavenLocal
 ```
 
-The local coordinate is `ro.cimbyte.ui:cimbyte-ui-compose:0.2.0-SNAPSHOT`. Override the version with `-PCIMBYTE_VERSION=0.2.0`.
+The local coordinate is `ro.cimbyte.ui:cimbyte-ui-compose:0.2.1-SNAPSHOT`. Override the version with `-PCIMBYTE_VERSION=0.2.1`.
 
 ```kotlin
 repositories {
@@ -47,7 +47,7 @@ repositories {
 }
 
 dependencies {
-    implementation("ro.cimbyte.ui:cimbyte-ui-compose:0.2.0-SNAPSHOT")
+    implementation("ro.cimbyte.ui:cimbyte-ui-compose:0.2.1-SNAPSHOT")
 }
 ```
 
