@@ -335,6 +335,16 @@
 .cb-card-hover { transition: border-color 0.16s, box-shadow 0.16s; }
 .cb-card-hover:hover { border-color: var(--cb-ink-30); box-shadow: var(--cb-shadow-sm); }
 .cb-card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; }
+.cb-card-flush { padding: 0; overflow: hidden; }
+.cb-card-flush > .cb-card-header {
+  margin: 0; padding: var(--cb-space-md) var(--cb-space-lg);
+  border-bottom: 1px solid var(--cb-line-soft);
+}
+.cb-card-footer {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: var(--cb-space-sm); padding: var(--cb-space-sm) var(--cb-space-lg);
+  border-top: 1px solid var(--cb-line-soft); color: var(--cb-ink-50); font-size: 12px;
+}
 .cb-card-title { font-size: 14px; font-weight: 600; color: var(--cb-ink); }
 
 /* Stat / metric */

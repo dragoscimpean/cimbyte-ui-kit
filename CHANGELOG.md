@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3 — 2026-07-17
+
+- Added flush cards with sectioned headers and compact metadata footers on the web.
+
 ## 0.2.2 — 2026-07-16
 
 - Reissued the verified Android artifact after a transient upstream JitPack dependency-resolution failure.
