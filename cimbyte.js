@@ -167,7 +167,7 @@
     el.setAttribute("aria-modal", "true");
     el.setAttribute("aria-hidden", el.classList.contains("is-open") ? "false" : "true");
 
-    var title = $(".cb-modal-title", el);
+    var title = $(".cb-modal-title, .cb-drawer-title", el);
     if (title && !el.hasAttribute("aria-label") && !el.hasAttribute("aria-labelledby")) {
       el.setAttribute("aria-labelledby", ensureId(title, "cb-overlay-title-"));
     }

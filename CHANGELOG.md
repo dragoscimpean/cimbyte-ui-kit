@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0 — 2026-07-17
+
+- Added reusable application-shell, sidebar header and navigation, responsive grid, section heading, compact surface, metric, metadata, list-row, toolbar, alert, icon, and drawer composition classes.
+- Added a reusable `cb-blueprint` dotted workspace background; authentication shells continue to include it automatically.
+- Added an opt-in responsive table layout with accessible captions, mobile cell labels, table footers, and keyboard focus states.
+- Added structured drawer anatomy and accessible drawer-title discovery while preserving the existing overlay behavior.
+
 ## 0.2.4 — 2026-07-17
 
 - Fixed setting and table identity text stacking when semantic inline elements are used.

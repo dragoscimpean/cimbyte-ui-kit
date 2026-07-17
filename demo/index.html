@@ -17,13 +17,13 @@
     .doc-demo { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
   </style>
 </head>
-<body class="cb">
+<body class="cb cb-blueprint">
   <div class="cb-navbar">
     <div class="cb-navbar-brand">
       <span class="cb-brand-mark"><span></span><span></span><span></span></span>
       Cimbyte UI
     </div>
-    <span class="cb-badge cb-badge-accent">v0.2</span>
+    <span class="cb-badge cb-badge-accent">v0.3</span>
     <div class="cb-navbar-spacer"></div>
     <div class="cb-search" style="max-width:260px;">
       <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="6"/><path d="m14 14 3 3"/></svg>
@@ -123,19 +123,19 @@
     <!-- Cards & stats -->
     <div class="doc-section">
       <h2>Cards, Stats &amp; Key/Value</h2>
-      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:repeat(3,1fr);">
-        <div class="cb-stat"><div class="cb-stat-label">Companies</div><div class="cb-stat-value">4.02M</div><div class="cb-stat-delta is-up">▲ 12k this week</div></div>
+      <div class="cb-stat-grid">
+        <div class="cb-stat"><div class="cb-stat-head"><div class="cb-stat-label">Companies</div><span class="cb-badge cb-badge-success">Exact</span></div><div class="cb-stat-value">4.02M</div><div class="cb-stat-meta"><span>As of 10:42</span><span>ANAF</span></div></div>
         <div class="cb-stat"><div class="cb-stat-label">Open deals</div><div class="cb-stat-value">37</div><div class="cb-stat-delta is-down">▼ 3 vs last week</div></div>
-        <div class="cb-stat"><div class="cb-stat-label">SLA breaches</div><div class="cb-stat-value">5</div><div class="cb-stat-delta">stable</div></div>
+        <div class="cb-stat cb-stat-compact"><div class="cb-stat-label">SLA breaches</div><div class="cb-stat-value">5</div><div class="cb-stat-delta">compact metric</div></div>
       </div>
-      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:1fr 1fr; margin-top:1rem;">
+      <div class="cb-grid cb-grid-2 cb-grid-responsive" style="margin-top:1rem;">
         <div class="cb-card cb-card-hover">
           <div class="cb-card-header"><span class="cb-avatar">DD</span><div><div class="cb-card-title">Dedeman SRL</div><div class="cb-meta">CUI 5550330</div></div></div>
-          <dl class="cb-kv">
-            <dt>Revenue</dt><dd>8.9B RON</dd>
-            <dt>Employees</dt><dd>11,400</dd>
-            <dt>County</dt><dd>Bacău</dd>
-            <dt>Signal score</dt><dd><span class="cb-badge cb-badge-accent">72</span></dd>
+          <dl class="cb-kv-list cb-kv-list-compact">
+            <div><dt>Revenue</dt><dd>8.9B RON</dd></div>
+            <div><dt>Employees</dt><dd>11,400</dd></div>
+            <div><dt>County</dt><dd>Bacău</dd></div>
+            <div><dt>Signal score</dt><dd><span class="cb-badge cb-badge-accent">72</span></dd></div>
           </dl>
         </div>
         <div class="cb-panel">
@@ -147,9 +147,17 @@
           </div>
         </div>
         <div class="cb-card cb-card-flush">
-          <div class="cb-card-header"><div><div class="cb-card-title">Recent observations</div><div class="cb-meta">Flush card sections</div></div></div>
-          <div class="cb-empty cb-empty-compact"><div class="cb-empty-title">No observations yet</div><div>New observations will appear here.</div></div>
+          <div class="cb-section-head"><div class="cb-section-head-main"><h3 class="cb-section-title">Recent observations</h3><p class="cb-section-copy">Flush card with a structured section heading.</p></div><div class="cb-section-actions"><button class="cb-btn cb-btn-xs">Refresh</button></div></div>
+          <div class="cb-card-body"><div class="cb-empty cb-empty-compact"><div class="cb-empty-title">No observations yet</div><div>New observations will appear here.</div></div></div>
           <div class="cb-card-footer"><span>0 observations</span><span>Updated just now</span></div>
+        </div>
+        <div class="cb-panel cb-panel-compact">
+          <div class="cb-section-head"><div class="cb-section-head-main"><h3 class="cb-section-title">Reusable list rows</h3><p class="cb-section-copy">Pressable rows expose selection with ARIA.</p></div></div>
+          <div class="cb-stack cb-stack-xs">
+            <button class="cb-list-row" aria-pressed="true"><span class="cb-list-main"><span class="cb-list-title">Source records</span><span class="cb-list-copy">4.02M indexed companies</span></span></button>
+            <button class="cb-list-row" aria-pressed="false"><span class="cb-list-main"><span class="cb-list-title">Processing runs</span><span class="cb-list-copy">Latest status and throughput</span></span></button>
+          </div>
+          <div class="cb-chip-list" style="margin-top:0.75rem;"><span class="cb-badge">Catalog</span><span class="cb-badge cb-badge-info">Lineage</span><span class="cb-badge cb-badge-warning">Review</span></div>
         </div>
       </div>
     </div>
@@ -158,7 +166,7 @@
     <div class="doc-section">
       <h2>Alerts</h2>
       <div class="cb-stack" style="max-width:640px;">
-        <div class="cb-alert cb-alert-info">New Monitorul Oficial events were ingested.</div>
+        <div class="cb-alert cb-alert-info"><span>New Monitorul Oficial events were ingested.</span><span class="cb-alert-actions"><button class="cb-btn cb-btn-xs">Review</button></span></div>
         <div class="cb-alert cb-alert-success">Deal moved to <strong>diligence</strong>.</div>
         <div class="cb-alert cb-alert-warning">3 deals approaching SLA breach.</div>
         <div class="cb-alert cb-alert-error">Failed to connect to the data source.</div>
@@ -168,8 +176,14 @@
     <!-- Table -->
     <div class="doc-section">
       <h2>Data Table (sortable, selectable)</h2>
-      <div class="cb-table-wrap">
+      <div class="cb-toolbar" style="margin-bottom:0.65rem;">
+        <div class="cb-search cb-toolbar-search"><input class="cb-input cb-input-sm" aria-label="Filter companies" placeholder="Filter companies…" /></div>
+        <span class="cb-toolbar-spacer"></span>
+        <select class="cb-select cb-input-sm cb-toolbar-select cb-fill-mobile" aria-label="Filter stage"><option>All stages</option><option>Queued</option></select>
+      </div>
+      <div class="cb-table-wrap cb-table-wrap-responsive" tabindex="0" role="region" aria-label="Companies">
         <table class="cb-table cb-table-selectable" data-cb-sortable>
+          <caption class="cb-sr-only">Companies, revenue, signal score, and stage</caption>
           <thead>
             <tr>
               <th class="is-sortable">Company <span class="cb-sort-arrow"></span></th>
@@ -180,12 +194,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Dedeman SRL</td><td>Bacău</td><td class="cb-table-num">8900</td><td class="cb-table-num">72</td><td><span class="cb-badge cb-badge-info">queued</span></td></tr>
-            <tr><td>Autonom Services</td><td>Neamț</td><td class="cb-table-num">640</td><td class="cb-table-num">88</td><td><span class="cb-badge cb-badge-accent">outreach</span></td></tr>
-            <tr><td>Cris-Tim</td><td>Ilfov</td><td class="cb-table-num">1320</td><td class="cb-table-num">54</td><td><span class="cb-badge">signal</span></td></tr>
-            <tr><td>Aquila Part Prod</td><td>Ploiești</td><td class="cb-table-num">2100</td><td class="cb-table-num">61</td><td><span class="cb-badge cb-badge-success">engaged</span></td></tr>
+            <tr tabindex="0"><td data-label="Company">Dedeman SRL</td><td data-label="County">Bacău</td><td class="cb-table-num" data-label="Revenue (M)">8900</td><td class="cb-table-num" data-label="Signal">72</td><td data-label="Stage"><span class="cb-badge cb-badge-info">queued</span></td></tr>
+            <tr tabindex="0"><td data-label="Company">Autonom Services</td><td data-label="County">Neamț</td><td class="cb-table-num" data-label="Revenue (M)">640</td><td class="cb-table-num" data-label="Signal">88</td><td data-label="Stage"><span class="cb-badge cb-badge-accent">outreach</span></td></tr>
+            <tr tabindex="0"><td data-label="Company">Cris-Tim</td><td data-label="County">Ilfov</td><td class="cb-table-num" data-label="Revenue (M)">1320</td><td class="cb-table-num" data-label="Signal">54</td><td data-label="Stage"><span class="cb-badge">signal</span></td></tr>
+            <tr tabindex="0"><td data-label="Company">Aquila Part Prod</td><td data-label="County">Ploiești</td><td class="cb-table-num" data-label="Revenue (M)">2100</td><td class="cb-table-num" data-label="Signal">61</td><td data-label="Stage"><span class="cb-badge cb-badge-success">engaged</span></td></tr>
           </tbody>
         </table>
+        <div class="cb-table-footer"><span>4 companies</span><span>Updated just now</span></div>
       </div>
       <p class="cb-field-hint">Click a header to sort. Click a row to select.</p>
     </div>
@@ -347,7 +362,7 @@
     <!-- Settings and form layouts -->
     <div class="doc-section">
       <h2>Settings, Disclosure &amp; Form Layouts</h2>
-      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));">
+      <div class="cb-grid cb-grid-auto cb-grid-responsive" style="--cb-grid-min:320px;">
         <div class="cb-settings">
           <div class="cb-setting-row">
             <div class="cb-setting-main"><span class="cb-setting-title">Automatic updates</span><span class="cb-setting-copy">Install stable releases when they become available.</span></div>
@@ -358,7 +373,7 @@
             <div class="cb-setting-action"><button class="cb-btn cb-btn-sm">Choose</button></div>
           </div>
         </div>
-        <details class="cb-disclosure" open>
+        <details class="cb-disclosure cb-disclosure-plain" open>
           <summary>Advanced options</summary>
           <div class="cb-disclosure-body">
             <div class="cb-form-grid cb-form-grid-2">
@@ -399,12 +414,12 @@
         <span class="cb-bulk-spacer"></span>
         <div class="cb-bulk-actions"><button class="cb-btn cb-btn-sm">Move</button><button class="cb-btn cb-btn-sm cb-btn-danger-outline">Remove</button><button class="cb-btn cb-btn-sm cb-btn-ghost">Clear</button></div>
       </div>
-      <div class="cb-grid cb-grid-responsive" style="grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); margin-top:0.75rem;">
-        <div class="cb-card cb-card-selectable is-selected" role="option" aria-selected="true" tabindex="0">
+      <div class="cb-grid cb-grid-auto cb-grid-responsive cb-grid-compact" style="--cb-grid-min:240px; margin-top:0.75rem;">
+        <div class="cb-card cb-card-selectable" role="button" aria-pressed="true" tabindex="0">
           <div class="cb-card-title-row"><div class="cb-card-title">Selected item</div><span class="cb-badge cb-badge-accent">Active</span></div>
           <p class="cb-muted">Selection, processing, checked, and drop-target states are additive.</p>
         </div>
-        <div class="cb-card cb-card-selectable is-processing" role="option" aria-selected="false" tabindex="0">
+        <div class="cb-card cb-card-selectable is-processing" role="button" aria-pressed="false" tabindex="0">
           <div class="cb-card-title-row"><div class="cb-card-title">Processing item</div><span class="cb-spinner"></span></div>
           <div class="cb-progress" style="margin-top:0.75rem;"><div class="cb-progress-bar" style="width:54%"></div></div>
         </div>
@@ -544,15 +559,24 @@ return sample.length;</code></pre>
 
   <!-- Drawer markup -->
   <div class="cb-scrim"></div>
-  <div class="cb-drawer" id="demo-drawer">
-    <div class="cb-modal-header">
-      <span class="cb-modal-title">Filters</span>
+  <div class="cb-drawer" id="demo-drawer" style="--cb-drawer-width:520px;">
+    <div class="cb-drawer-header">
+      <div><div class="cb-eyebrow">Companies</div><h2 class="cb-drawer-title">Filters</h2></div>
       <button class="cb-icon-btn" data-cb-dismiss="drawer">✕</button>
     </div>
-    <div class="cb-modal-body cb-stack">
-      <div class="cb-field"><label class="cb-label">Min revenue</label><input class="cb-input" placeholder="1,000,000" /></div>
-      <div class="cb-field"><label class="cb-label">Signal type</label><select class="cb-select"><option>Succession risk</option><option>PE secondary</option></select></div>
-      <button class="cb-btn cb-btn-primary cb-btn-block" data-cb-dismiss="drawer">Apply</button>
+    <div class="cb-drawer-body">
+      <section class="cb-drawer-section cb-stack">
+        <div class="cb-field"><label class="cb-label">Min revenue</label><input class="cb-input" placeholder="1,000,000" /></div>
+        <div class="cb-field"><label class="cb-label">Signal type</label><select class="cb-select"><option>Succession risk</option><option>PE secondary</option></select></div>
+      </section>
+      <section class="cb-drawer-section">
+        <div class="cb-section-label">Active filters</div>
+        <div class="cb-chip-list" style="margin-top:0.65rem;"><span class="cb-badge cb-badge-info">Revenue</span><span class="cb-badge">All counties</span></div>
+      </section>
+    </div>
+    <div class="cb-drawer-footer">
+      <button class="cb-btn" data-cb-dismiss="drawer">Cancel</button>
+      <button class="cb-btn cb-btn-primary" data-cb-dismiss="drawer">Apply</button>
     </div>
   </div>
 

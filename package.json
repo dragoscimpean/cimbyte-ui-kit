@@ -1,6 +1,6 @@
 {
   "name": "@cimbyte/ui",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Cimbyte UI — cross-platform design tokens, standalone CSS and vanilla JS behaviors.",
   "type": "module",
   "main": "cimbyte.js",
