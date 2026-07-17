@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.4 — 2026-07-17
+
+- Fixed setting and table identity text stacking when semantic inline elements are used.
+
 ## 0.2.3 — 2026-07-17
 
 - Added flush cards with sectioned headers and compact metadata footers on the web.

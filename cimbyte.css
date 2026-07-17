@@ -702,8 +702,8 @@
 }
 .cb-setting-row:last-child { border-bottom: 0; }
 .cb-setting-main { flex: 1; min-width: 0; }
-.cb-setting-title { color: var(--cb-ink); font-size: 13.5px; font-weight: 600; }
-.cb-setting-copy { color: var(--cb-ink-50); font-size: 12px; line-height: 1.4; margin-top: 0.15rem; }
+.cb-setting-title { display: block; color: var(--cb-ink); font-size: 13.5px; font-weight: 600; }
+.cb-setting-copy { display: block; color: var(--cb-ink-50); font-size: 12px; line-height: 1.4; margin-top: 0.15rem; }
 .cb-setting-action { flex-shrink: 0; }
 .cb-disclosure { border: 1px solid var(--cb-line); border-radius: var(--cb-radius); background: var(--cb-paper); overflow: hidden; }
 .cb-disclosure > summary {
@@ -860,8 +860,8 @@
 .cb-status.is-info .cb-dot { background: var(--cb-info); }
 .cb-table-identity { display: flex; align-items: center; gap: 0.6rem; min-width: 0; }
 .cb-table-identity-main { min-width: 0; }
-.cb-table-identity-title { overflow: hidden; color: var(--cb-ink); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
-.cb-table-identity-meta { overflow: hidden; color: var(--cb-ink-50); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.cb-table-identity-title { display: block; overflow: hidden; color: var(--cb-ink); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.cb-table-identity-meta { display: block; overflow: hidden; color: var(--cb-ink-50); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .cb-meter { display: flex; align-items: center; gap: 0.5rem; min-width: 100px; }
 .cb-meter-track { flex: 1; height: 5px; overflow: hidden; border-radius: var(--cb-radius-pill); background: var(--cb-bg-3); }
 .cb-meter-fill { height: 100%; border-radius: inherit; background: var(--cb-accent); }
